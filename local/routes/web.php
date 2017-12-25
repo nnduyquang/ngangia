@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.homepage.index');
-});
+//Route::get('/', function () {
+//    return view('frontend.homepage.index');
+//});
+Route::get('/','HomepageController@showHomepage');
 Route::get('/category', function () {
     return view('frontend.category.category');
 });

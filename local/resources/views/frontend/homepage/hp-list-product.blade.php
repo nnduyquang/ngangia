@@ -6,7 +6,16 @@
                     <div class="title-top">
                         <h3 class="header-title">
                             <span><a href="#">Đèn Phòng Ngủ</a></span>
-                            <a class="view-all" href="#">Xem Tất Cả</a>
+                            <ul>
+                                <li><a href="">Máy Tính</a></li>
+                                <li><a href="">Máy Chiếu</a></li>
+                                <li><a href="">Máy In</a></li>
+                                <li><a href="">Máy Photocopy</a></li>
+                                <li><a href="">Bàn Văn Phòng</a></li>
+                                <li><a href="">Ghế Ngồi Văn Phòng</a></li>
+                                <li><a class="view-all" href="#">Xem Tất Cả</a></li>
+                            </ul>
+
                         </h3>
                         {{ Html::image('images/temp/temp_list_product_banner.png','',array('class'=>'no-style')) }}
                     </div>
