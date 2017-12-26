@@ -10,7 +10,7 @@ class HomepageController extends Controller
 {
     public function showHomepage()
     {
-        $list_sidebar = Category::select('id', 'name', 'level', 'parent_id')->where('level', '=', 0)->orWhere('level', '=', 1)->orderBy('order')->get();
+        $list_sidebar = Category::select('id', 'name', 'level', 'parent_id','path')->where('level', '=', 0)->orWhere('level', '=', 1)->orderBy('order')->get();
         $menu_horizon= Category::where('level', '=', 0)->orderBy('order')->get();
         $menu_sidebar = [];
         self::showCategoryDropDown($list_sidebar, 0, $menu_sidebar);
@@ -52,6 +52,12 @@ class HomepageController extends Controller
         foreach ($sub as $key => $data) {
             self::getAllProductByCategory($data, $list_product);
         }
+    }
+    public function getFrontendContentCategory()
+    {
+        $categories =Category::where('level', '=', 0)->orderBy('order')->get();
+        $menu_horizon= Category::where('level', '=', 0)->orderBy('order')->get();
+        return view('frontend.common.menu.m-category', compact('categories','menu_horizon'));
     }
 
 }

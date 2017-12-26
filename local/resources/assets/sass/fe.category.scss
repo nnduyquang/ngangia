@@ -100,3 +100,21 @@
     }
   }
 }
+@media screen and (max-width: 768px) {
+  #category {
+    .category-top {
+      .list-item {
+        float: left;
+        .one-item{
+          img{
+            width: 100%;
+            height: 134px;
+          }
+        }
+      }
+    }
+    .category-bottom {
+      float: left;
+    }
+  }
+}

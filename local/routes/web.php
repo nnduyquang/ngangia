@@ -11,12 +11,9 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('frontend.homepage.index');
-//});
 Route::get('/','HomepageController@showHomepage');
 Route::get('/danh-muc/{pathCategory}','feCategoryController@getDetailCategory');
-//Route::get('/{pathCategory}/{pathSubCategory}','feCategoryController@getDetailSubCategory');
+Route::get('/category', 'HomepageController@getFrontendContentCategory');
 
 Route::get('/{pathCategory}/san-pham/{pathProduct}', 'feProductController@getDetailProduct');
 

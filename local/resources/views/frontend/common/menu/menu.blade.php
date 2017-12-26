@@ -1,13 +1,13 @@
-<div id="menu" class="col-md-12">
+<div id="menu" class="col-md-12 hidden-sm hidden-xs">
     <div class="row">
         <div id="menu-top" class="col-md-12">
             <div class="row">
                 <div class="container">
                     <div class="menu-top-l">
-                        <span>Liên Hệ: 0907468264</span>
+                        <span>Liên Hệ: 0909.999.999</span>
                     </div>
                     <div class="menu-top-r">
-                        <span>Địa Chỉ: </span>
+                        <span>Địa Chỉ: 49/74/1D Bùi Quang Là, Phường 12, Quận Gò Vấp, TPHCM</span>
                     </div>
                 </div>
             </div>
