@@ -15,13 +15,10 @@
 //    return view('frontend.homepage.index');
 //});
 Route::get('/','HomepageController@showHomepage');
-Route::get('/category', function () {
-    return view('frontend.category.category');
-});
+Route::get('/danh-muc/{pathCategory}','feCategoryController@getDetailCategory');
+//Route::get('/{pathCategory}/{pathSubCategory}','feCategoryController@getDetailSubCategory');
 
-Route::get('/category/detail', function () {
-    return view('frontend.detail.detail');
-});
+Route::get('/{pathCategory}/san-pham/{pathProduct}', 'feProductController@getDetailProduct');
 
 /////////////////////////////////////////////
 /// BACKEND

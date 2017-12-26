@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 25, 2017 at 01:24 AM
+-- Generation Time: Dec 26, 2017 at 12:53 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -48,7 +48,7 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `image`, `description`, `path`, `seo_title`, `seo_description`, `isActive`, `order`, `level`, `parent_id`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 'Thiết Bị Văn Phòng Hiện Đại', 'images/uploads/images/temp_list_product_banner.png', '<p>M&ocirc; tả ngắn 1</p>', 'thiet-bi-van-phong-hien-dai', 'tiêu đề seo', '<p>m&ocirc; tả seo</p>', 1, 1, 0, NULL, 1, '2017-12-24 07:51:01', '2017-12-24 07:51:01'),
+(1, 'Thiết Bị Văn Phòng Hiện Đại', 'images/uploads/images/danhmuc/thiet_bi_van_phong_hien_dai.jpg', '<p>Mô tả ngắn 1</p>', 'thiet-bi-van-phong-hien-dai', 'tiêu đề seo', '<p>mô tả seo</p>', 1, 1, 0, 0, 1, '2017-12-24 07:51:01', '2017-12-25 15:10:37'),
 (2, 'Máy Tính', 'images/uploads/images/temp_list_product_banner.png', '<p>M&ocirc; Tả Ngắn 1</p>', 'may-tinh', 'Tiêu Đề SEO 1', '<p>M&ocirc; Tả SEO 1</p>', 1, 1, 1, 1, 1, '2017-12-24 07:53:55', '2017-12-24 08:36:21'),
 (3, 'Máy In', 'images/uploads/images/temp_list_product_banner.png', '<p>M&ocirc; Tả Ngắn 1</p>', 'may-in', 'Tiêu Đề SEO 1', '<p>M&ocirc; Tả SEO 1</p>', 1, 3, 1, 1, 1, '2017-12-24 07:59:07', '2017-12-24 08:36:52'),
 (4, 'Máy Chiếu', 'images/uploads/images/temp_list_product_banner.png', '<p>M&ocirc; Tả Ngắn 1</p>', 'may-chieu', 'Tiêu Đề SEO 1', '<p>M&ocirc; Tả Seo 1</p>', 1, 2, 1, 1, 1, '2017-12-24 08:00:07', '2017-12-24 08:36:34'),
@@ -69,7 +69,7 @@ INSERT INTO `categories` (`id`, `name`, `image`, `description`, `path`, `seo_tit
 (19, 'Ghế Ngồi Làm Việc Giám Đốc - Trưởng Phòng', 'images/uploads/images/temp_list_product_banner.png', '<p>M&ocirc; Tả Ngắn</p>', 'ghe-ngoi-lam-viec-giam-doc-truong-phong', 'Tiêu D(ề SEO', '<p>M&ocirc; Tả SEO</p>', 1, 1, 2, 7, 1, '2017-12-24 09:30:42', '2017-12-24 09:30:42'),
 (20, 'Ghế Nhân Viên', 'images/uploads/images/temp_list_product_banner.png', '<p>M&ocirc; Tả Ngắn</p>', 'ghe-nhan-vien', 'Tiêu Đề SEO', '<p>M&ocirc; Tả SEO</p>', 1, 2, 2, 7, 1, '2017-12-24 09:31:41', '2017-12-24 09:31:41'),
 (21, 'Ghế Phòng Họp', 'images/uploads/images/temp_list_product_banner.png', '<p>M&ocirc; Tả Ngắn</p>', 'ghe-phong-hop', 'Tiêu Đề SEO', '<p>M&ocirc; Tả SEO</p>', 1, 3, 2, 7, 1, '2017-12-24 09:32:20', '2017-12-24 09:32:20'),
-(22, 'Thiết Bị Giáo Dục', 'images/uploads/images/temp_list_product_banner.png', '<p>M&ocirc; Tả Ngắn&nbsp;</p>', 'thiet-bi-giao-duc', 'Tiêu D(ề SEO', '<p>M&ocirc; Tả SEO</p>', 1, 2, 0, 0, 1, '2017-12-24 09:34:49', '2017-12-24 09:34:59'),
+(22, 'Thiết Bị Giáo Dục', 'images/uploads/images/danhmuc/thiet_bi_giao_duc.jpg', '<p>Mô Tả Ngắn </p>', 'thiet-bi-giao-duc', 'Tiêu D(ề SEO', '<p>Mô Tả SEO</p>', 1, 2, 0, 0, 1, '2017-12-24 09:34:49', '2017-12-25 15:17:07'),
 (23, 'Bàn Ghế Học Sinh', 'images/uploads/images/temp_list_product_banner.png', '<p>M&ocirc; Tả Ngắn</p>', 'ban-ghe-hoc-sinh', 'Tiêu Đề SEO', '<p>M&ocirc; Tả SEO</p>', 1, 1, 1, 22, 1, '2017-12-24 09:36:43', '2017-12-24 09:36:43'),
 (24, 'Phòng Máy Tính', 'images/uploads/images/temp_list_product_banner.png', '<p>M&ocirc; Tả Ngắn</p>', 'phong-may-tinh', 'Tiêu Đề SEO', '<p>M&ocirc; Tả SEO</p>', 1, 1, 1, 22, 1, '2017-12-24 09:37:23', '2017-12-24 09:37:23'),
 (25, 'Phòng LAB Ngoại Ngữ', 'images/uploads/images/temp_list_product_banner.png', '<p>M&ocirc; Tả Ngắn</p>', 'phong-lab-ngoai-ngu', 'Tiêu Đề SEO', '<p>M&ocirc; Tả SEO</p>', 1, 3, 1, 22, 1, '2017-12-24 09:38:07', '2017-12-24 09:38:20'),

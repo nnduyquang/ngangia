@@ -6,28 +6,26 @@ use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 
-class HomepageController extends Controller
+class feProductController extends Controller
 {
-    public function showHomepage()
+    public function getDetailProduct($pathCategory, $pathProduct)
     {
-        $list_sidebar = Category::select('id', 'name', 'level', 'parent_id')->where('level', '=', 0)->orWhere('level', '=', 1)->orderBy('order')->get();
+        $product = Product::where('path', '=', $pathProduct)->first();
+        $list_sidebar = Category::select('id', 'name', 'level', 'parent_id','path')->where('level', '=', 0)->orWhere('level', '=', 1)->orderBy('order')->get();
         $menu_horizon= Category::where('level', '=', 0)->orderBy('order')->get();
         $menu_sidebar = [];
+        $order_product = [];
         self::showCategoryDropDown($list_sidebar, 0, $menu_sidebar);
-        $list_sidebar2 = Category::where('level', '=', 0)->orderBy('order')->get();
-        $list_product = [];
-        $final_array = [];
-        foreach ($list_sidebar2 as $key => $data) {
-            self::getAllProductByCategory($data, $list_product);
-            $list_subMenu=Category::where('parent_id','=',$data->id)->get();
-            array_push($final_array, array(["category" => $data, "list_product" => collect($list_product)->sortByDESC('created_at')->take(8),"list_subMenu"=>$list_subMenu]));
-
-//            dd(collect($list_product)->sortByDESC('created_at')->take(6)->toArray());
-            $list_product = [];
+        $category = Category::where('path', '=', $pathCategory)->first();
+        self::getAllProductByCategory($category, $order_product);
+        foreach ($order_product as $key => $data) {
+            if ($data->id == $product->id) {
+                unset($order_product[$key]);
+                break;
+            }
         }
-//        dd($final_array[0][0]['list_product']);
-//        dd($final_array);
-        return view('frontend.homepage.index', compact('menu_sidebar','final_array','menu_horizon'));
+        $order_product = collect($order_product)->sortByDESC('created_at')->take(4);
+        return view('frontend.detail.detail', compact('product', 'menu_sidebar', 'order_product','menu_horizon'));
     }
 
     public function showCategoryDropDown($dd_categories, $parent_id = 0, &$newArray)
@@ -45,7 +43,7 @@ class HomepageController extends Controller
     {
         $list = Product::where('category_id', '=', $category->id)->orderBy('created_at')->get();
         foreach ($list as $key2 => $data2) {
-            $data2->path=$category->path.'/san-pham/'.$data2->path;
+            $data2->path = $category->path . '/san-pham/' . $data2->path;
             array_push($list_product, $data2);
         }
         $sub = Category::where('parent_id', '=', $category->id)->get();
@@ -53,5 +51,4 @@ class HomepageController extends Controller
             self::getAllProductByCategory($data, $list_product);
         }
     }
-
 }
