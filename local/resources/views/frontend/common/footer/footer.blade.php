@@ -25,9 +25,9 @@
                     <h3>Ngân Gia</h3>
                     <ul>
 
-                        <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i><span>49/74/1D Bùi Quang Là, Phường 12, Quận Gò Vấp, TPHCM</span></a></li>
+                        <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i><span>49/24/10 Bùi Quang Là, Phường 12, Quận Gò Vấp, TPHCM</span></a></li>
                         <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i><span>Chăm sóc khách hàng: </br>
-                                    (028) 9999 9999</br>
+                                    (028) 66547111</br>
                                     Từ 8h00 - 17h00 các ngày thứ 2 đến thứ 7</span></a></li>
                         <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i><span>sales@ngangia.com.vn</span></a></li>
                     </ul>

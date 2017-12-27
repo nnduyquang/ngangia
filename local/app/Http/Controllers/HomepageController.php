@@ -21,11 +21,8 @@ class HomepageController extends Controller
             self::getAllProductByCategory($data, $list_product);
             $list_subMenu=Category::where('parent_id','=',$data->id)->get();
             array_push($final_array, array(["category" => $data, "list_product" => collect($list_product)->sortByDESC('created_at')->take(8),"list_subMenu"=>$list_subMenu]));
-
-//            dd(collect($list_product)->sortByDESC('created_at')->take(6)->toArray());
             $list_product = [];
         }
-//        dd($final_array[0][0]['list_product']);
 //        dd($final_array);
         return view('frontend.homepage.index', compact('menu_sidebar','final_array','menu_horizon'));
     }

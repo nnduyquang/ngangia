@@ -71,6 +71,22 @@
                     <strong>Loại Sản Phẩm</strong>
                     {!! Form::select('category',$dd_categories, null,array('class' => 'form-control')) !!}
                 </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="form-group">
+                            <strong>Giá: </strong>
+                            {!! Form::text('price',null, array('placeholder' => 'Tên','class' => 'form-control')) !!}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="form-group">
+                            <strong>% Giảm Giá: </strong>
+                            {!! Form::text('sale',null, array('placeholder' => 'Tên','class' => 'form-control')) !!}
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col-md-12" style="text-align:  center;">
                 <button id="btnDanhMuc" type="submit" class="btn btn-primary">Tạo Mới Sản Phẩm</button>

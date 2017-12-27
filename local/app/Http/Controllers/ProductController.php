@@ -62,6 +62,16 @@ class ProductController extends Controller
         $categoryID = $request->input('category');
         $seoTitle = $request->input('seo_title');
         $seoDescription = $request->input('seo_description');
+        $price = $request->input('price');
+        $sale = $request->input('sale');
+        if ($price) {
+            $product->price = $price;
+            if ($sale) {
+                $product->sale = $sale;
+                if ($sale != 0 && $price != 0)
+                    $product->final_price = (int)$price - ((int)$price * (int)$sale / 100);
+            }
+        }
         if ($order) {
             $product->order = $order;
         }
@@ -147,6 +157,16 @@ class ProductController extends Controller
         $categoryID = $request->input('category');
         $seoTitle = $request->input('seo_title');
         $seoDescription = $request->input('seo_description');
+        $price = $request->input('price');
+        $sale = $request->input('sale');
+        if ($price) {
+            $product->price = $price;
+            if ($sale) {
+                $product->sale = $sale;
+                if ($sale != 0 && $price != 0)
+                    $product->final_price = (int)$price - ((int)$price * (int)$sale / 100);
+            }
+        }
         if ($order) {
             $product->order = $order;
         }
