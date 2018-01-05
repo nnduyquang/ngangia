@@ -5,7 +5,7 @@
             @for($i=0;$i<count($menu_sidebar);$i++)
                 @if($menu_sidebar[$i]->level==0)
                     <li class="sub-menu">
-                        <a class="main-link" href="{{URL::to('danh-muc/'.$menu_sidebar[$i]->path)}}">{{$menu_sidebar[$i]->name}}
+                        <a class="main-link" href="{{URL::to('danh-muc/'.$menu_sidebar[$i]->path)}}">{{$menu_sidebar[$i]->name}}</a>
                             @if($i==count($menu_sidebar)-1)
                                 @break
                             @else
@@ -13,7 +13,7 @@
                                     <i class="fa fa-caret-right" aria-hidden="true"></i>
                                 @endif
                             @endif
-                        </a>
+
                         @if($i==count($menu_sidebar)-1)
                             @break
                         @else

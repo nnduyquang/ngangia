@@ -13,18 +13,19 @@
     li {
       transition: all 0.2s;
       border-bottom: 1px solid #d7d7d7;
+      position: relative;
       a.main-link {
         padding: 15px;
         color: #333;
         font-size: 16px;
         display: block;
-        position: relative;
-        i {
-          content: "\f0da";
-          font: normal normal normal 14px/1 FontAwesome;
-          position: absolute;
-          right: 0;
-        }
+      }
+      i {
+        content: "\f0da";
+        font: normal normal normal 14px/1 FontAwesome;
+        position: absolute;
+        right: 0;
+        top: 19px;
       }
     }
     li.sub-menu > .nav-sub {
