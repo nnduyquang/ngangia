@@ -41,30 +41,33 @@
                                                         @endforeach
                                                     </div>
                                                 </dic>
-                                                @foreach($data[0]['list_product'] as $key2=>$data2)
-                                                    <a href="{{URL::to($data2->path)}}">
+                                                <div class="wrap-flex">
+                                                    @foreach($data[0]['list_product'] as $key2=>$data2)
                                                         <div class="one-item col-md-3 col-xs-6">
-                                                            {{ Html::image($data2->image,'',array('class'=>'no-style')) }}
-                                                            <div class="item-detail">
-                                                                <span class="title">{{$data2->name}}</span>
-                                                                @if($data2->price!=0)
-                                                                    <span class="price-sale">{{$data2->final_price}} VND
-                                                                        @if($data2->sale!=0)
-                                                                            <span class="discount">- {{$data2->sale}}
-                                                                                %</span>
-                                                                        @endif
+                                                            <a href="{{URL::to($data2->path)}}">
+                                                                {{ Html::image($data2->image,'',array('class'=>'no-style')) }}
+                                                                {{--<div class="item-detail">--}}
+                                                                    <span class="title">{{$data2->name}}</span>
+                                                                    @if($data2->price!=0)
+                                                                        <span class="price-sale">{{$data2->final_price}}
+                                                                            VND
+                                                                            @if($data2->sale!=0)
+                                                                                <span class="discount">- {{$data2->sale}}
+                                                                                    %</span>
+                                                                            @endif
                                         </span>
-                                                                    @if($data2->sale!=0)
-                                                                        <span class="price-saving">{{$data2->price}}
-                                                                            VND</span>
+                                                                        @if($data2->sale!=0)
+                                                                            <span class="price-saving">{{$data2->price}}
+                                                                                VND</span>
+                                                                        @endif
+                                                                    @else
+                                                                        <span class="price-contact">Liên Hệ</span>
                                                                     @endif
-                                                                @else
-                                                                    <span class="price-contact">Liên Hệ</span>
-                                                                @endif
-                                                            </div>
+                                                                {{--</div>--}}
+                                                            </a>
                                                         </div>
-                                                    </a>
-                                                @endforeach
+                                                    @endforeach
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
