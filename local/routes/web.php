@@ -14,8 +14,9 @@
 Route::get('/','HomepageController@showHomepage');
 Route::get('/danh-muc/{pathCategory}','feCategoryController@getDetailCategory');
 Route::get('/category', 'HomepageController@getFrontendContentCategory');
-
 Route::get('/{pathCategory}/san-pham/{pathProduct}', 'feProductController@getDetailProduct');
+Route::post('/tim-kiem/', ['as' => 'homepage.search', 'uses' => 'HomepageController@search']);
+Route::get('/trang/{path}/','fePageController@getPageInfo');
 
 /////////////////////////////////////////////
 /// BACKEND
@@ -60,4 +61,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('sml_admin/product/{id}/edit', ['as' => 'product.edit', 'uses' => 'ProductController@edit', 'middleware' => ['permission:product-edit']]);
     Route::patch('sml_admin/product/{id}', ['as' => 'product.update', 'uses' => 'ProductController@update', 'middleware' => ['permission:product-edit']]);
     Route::delete('sml_admin/product/{id}', ['as' => 'product.destroy', 'uses' => 'ProductController@destroy', 'middleware' => ['permission:product-delete']]);
+
+    //PAGE
+    Route::get('sml_admin/page', ['as' => 'page.index', 'uses' => 'PageController@index', 'middleware' => ['permission:page-list|page-create|page-edit|page-delete']]);
+    Route::post('sml_admin/page/create', ['as' => 'page.store', 'uses' => 'PageController@store', 'middleware' => ['permission:page-create']]);
+    Route::post('sml_admin/page', ['as' => 'page.search', 'uses' => 'PageController@search']);
+    Route::get('sml_admin/page/create', ['as' => 'page.create', 'uses' => 'PageController@create', 'middleware' => ['permission:page-create']]);
+    Route::get('sml_admin/page/{id}/edit', ['as' => 'page.edit', 'uses' => 'PageController@edit', 'middleware' => ['permission:page-edit']]);
+    Route::patch('sml_admin/page/{id}', ['as' => 'page.update', 'uses' => 'PageController@update', 'middleware' => ['permission:page-edit']]);
+    Route::delete('sml_admin/page/{id}', ['as' => 'page.destroy', 'uses' => 'PageController@destroy', 'middleware' => ['permission:page-delete']]);
 });

@@ -44,8 +44,8 @@
                         <ul class="menu-list-r">
                             <li><a href="#" id="clickSearch"><i class="fa fa-search" aria-hidden="true"></i></a></li>
                             <li>
-                                {!! Form::open(array('method'=>'POST','id'=>'formSearch')) !!}
-                                {!! Form::text('key-search', '', array('placeholder' => 'Tìm Kiếm','class' => 'form-control','id'=>'searchInput')) !!}
+                                {!! Form::open(array('route' => 'homepage.search','method'=>'POST','id'=>'formSearch')) !!}
+                                {!! Form::text('txtSearch', '', array('placeholder' => 'Tìm Kiếm','class' => 'form-control','id'=>'searchInput')) !!}
                                 {!! Form::close() !!}
                             </li>
                         </ul>

@@ -11,4 +11,5 @@
     @endif
     <li><a href="{{ route('category.index') }}"><i class="fa fa-link"></i> <span>Loại Sản Phẩm</span></a></li>
     <li><a href="{{ route('product.index') }}"><i class="fa fa-link"></i> <span>Sản Phẩm</span></a></li>
+    <li><a href="{{route('page.index') }}"><i class="fa fa-link"></i> <span>Trang</span></a></li>
 </ul>

@@ -17,7 +17,7 @@
                 <div class="col-md-3">
                     <h3>Giới Thiệu</h3>
                     <ul>
-                        <li><a href="#">Về Chúng Tôi</a></li>
+                        <li><a href="{{URL::to('trang/gioi-thieu')}}">Về Chúng Tôi</a></li>
                         <li><a href="#">Liên Hệ</a></li>
                     </ul>
                 </div>

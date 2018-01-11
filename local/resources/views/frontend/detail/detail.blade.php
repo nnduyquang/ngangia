@@ -40,61 +40,74 @@
                                         <span class="price-contact">Liên Hệ</span>
                                     @endif
 
-                                    <input class="btn-confirm btn" type="button" value="0914183231">
+                                    @if(strpos($product->path, 'dan-man-hinh'))
+                                        <input class="btn-confirm btn" type="button" value="0914.183.299">
+                                    @else
+                                        <input class="btn-confirm btn" type="button" value="0914.183.231">
+                                    @endif
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div id="detail-mid" class="col-md-12">
-                    <div id="detail-mid-l" class="col-md-8">
+                    <div id="detail-mid-l"
+                         @if(count($order_product)!=0)
+                         class="col-md-8"
+                         @else
+                         class="col-md-12"
+                            @endif
+
+                    >
                         <div class="row">
-                            <div class="content">
+                            <div class="content col-md-12">
                                 {!! $product->description !!}
                             </div>
                         </div>
                     </div>
-                    <div id="detail-mid-r" class="col-md-4">
-                        <div class="content col-md-12">
-                            <h3>Có Thể Bạn Quan Tâm</h3>
-                            @foreach($order_product as $key=>$data)
-                                <div class="one-item col-md-12">
-                                    <a href="{{URL::to($data->path)}}">
-                                        {{ Html::image($data->image,'',array('class'=>'no-style')) }}
-                                        <span class="title">{{$data->name}}</span>
-                                        @if($data->price!=0)
-                                            <span class="price-sale">{{$data->price}} VND
-                                                @if($data->sale!=0)
-                                                    <span class="discount">{{$data->sale}}</span>
-                                                @endif
+                    @if(count($order_product)!=0)
+                        <div id="detail-mid-r" class="col-md-4">
+                            <div class="content col-md-12">
+                                <h3>Có Thể Bạn Quan Tâm</h3>
+                                @foreach($order_product as $key=>$data)
+                                    <div class="one-item col-md-12">
+                                        <a href="{{URL::to($data->path)}}">
+                                            {{ Html::image($data->image,'',array('class'=>'no-style')) }}
+                                            <span class="title">{{$data->name}}</span>
+                                            @if($data->price!=0)
+                                                <span class="price-sale">{{$data->price}} VND
+                                                    @if($data->sale!=0)
+                                                        <span class="discount">{{$data->sale}}</span>
+                                                    @endif
                                         </span>
-                                            @if($data->sale!=0)
-                                                <span class="price-saving">{{$data->final_price}} VND</span>
+                                                @if($data->sale!=0)
+                                                    <span class="price-saving">{{$data->final_price}} VND</span>
+                                                @endif
+                                            @else
+                                                <span class="price-contact">Liên Hệ</span>
                                             @endif
-                                        @else
-                                            <span class="price-contact">Liên Hệ</span>
-                                        @endif
-                                    </a>
-                                </div>
-                            @endforeach
-                            {{--<div class="one-item col-md-12">--}}
-                            {{--<a href="">--}}
-                            {{--{{ Html::image('images/temp/temp_hp_item.jpg','',array('class'=>'no-style')) }}--}}
-                            {{--<span class="title">Khăn gội siêu mềm Vinatowel VN 05 33x80cm (Xanh)</span>--}}
-                            {{--<span class="price-sale">22.000 VND<span class="discount">-33%</span></span>--}}
-                            {{--<span class="price-saving">32.600 VND</span>--}}
-                            {{--</a>--}}
-                            {{--</div>--}}
-                            {{--<div class="one-item col-md-12">--}}
-                            {{--<a href="">--}}
-                            {{--{{ Html::image('images/temp/temp_hp_item.jpg','',array('class'=>'no-style')) }}--}}
-                            {{--<span class="title">Khăn gội siêu mềm Vinatowel VN 05 33x80cm (Xanh)</span>--}}
-                            {{--<span class="price-sale">22.000 VND<span class="discount">-33%</span></span>--}}
-                            {{--<span class="price-saving">32.600 VND</span>--}}
-                            {{--</a>--}}
-                            {{--</div>--}}
+                                        </a>
+                                    </div>
+                                @endforeach
+                                {{--<div class="one-item col-md-12">--}}
+                                {{--<a href="">--}}
+                                {{--{{ Html::image('images/temp/temp_hp_item.jpg','',array('class'=>'no-style')) }}--}}
+                                {{--<span class="title">Khăn gội siêu mềm Vinatowel VN 05 33x80cm (Xanh)</span>--}}
+                                {{--<span class="price-sale">22.000 VND<span class="discount">-33%</span></span>--}}
+                                {{--<span class="price-saving">32.600 VND</span>--}}
+                                {{--</a>--}}
+                                {{--</div>--}}
+                                {{--<div class="one-item col-md-12">--}}
+                                {{--<a href="">--}}
+                                {{--{{ Html::image('images/temp/temp_hp_item.jpg','',array('class'=>'no-style')) }}--}}
+                                {{--<span class="title">Khăn gội siêu mềm Vinatowel VN 05 33x80cm (Xanh)</span>--}}
+                                {{--<span class="price-sale">22.000 VND<span class="discount">-33%</span></span>--}}
+                                {{--<span class="price-saving">32.600 VND</span>--}}
+                                {{--</a>--}}
+                                {{--</div>--}}
+                            </div>
                         </div>
-                    </div>
+                    @endif
                 </div>
                 <div id="detail-bottom" class="col-md-12">
                     @include('frontend.homepage.hp-bottom')

@@ -135,29 +135,53 @@ class PermissionTableSeeder extends Seeder
 //                'description' => 'Được Xóa Loại Sản Phẩm',
 //                'category_permission_id'=>3
 //            ],
+//            [
+//                'name' => 'product-list',
+//                'display_name' => 'Xem Toàn Bộ Sản Phẩm',
+//                'description' => 'Được Xem Toàn Bộ Sản Phẩm',
+//                'category_permission_id'=>4
+//            ],
+//            [
+//                'name' => 'product-create',
+//                'display_name' => 'Tạo Sản Phẩm Mới',
+//                'description' => 'Được Tạo Sản Phẩm Mới',
+//                'category_permission_id'=>4
+//            ],
+//            [
+//                'name' => 'product-edit',
+//                'display_name' => 'Cập Nhật Sản Phẩm',
+//                'description' => 'Được Cập Nhật Sản Phẩm',
+//                'category_permission_id'=>4
+//            ],
+//            [
+//                'name' => 'product-delete',
+//                'display_name' => 'Xóa Sản Phẩm',
+//                'description' => 'Được Xóa Sản Phẩm',
+//                'category_permission_id'=>4
+//            ],
             [
-                'name' => 'product-list',
-                'display_name' => 'Xem Toàn Bộ Sản Phẩm',
-                'description' => 'Được Xem Toàn Bộ Sản Phẩm',
-                'category_permission_id'=>4
+                'name' => 'page-list',
+                'display_name' => 'Xem Toàn Bộ Trang',
+                'description' => 'Được Xem Toàn Bộ Trang',
+                'category_permission_id'=>5
             ],
             [
-                'name' => 'product-create',
-                'display_name' => 'Tạo Sản Phẩm Mới',
-                'description' => 'Được Tạo Sản Phẩm Mới',
-                'category_permission_id'=>4
+                'name' => 'page-create',
+                'display_name' => 'Tạo Trang Mới',
+                'description' => 'Được Tạo TrangMới',
+                'category_permission_id'=>5
             ],
             [
-                'name' => 'product-edit',
-                'display_name' => 'Cập Nhật Sản Phẩm',
-                'description' => 'Được Cập Nhật Sản Phẩm',
-                'category_permission_id'=>4
+                'name' => 'page-edit',
+                'display_name' => 'Cập Nhật Trang',
+                'description' => 'Được Cập Nhật Trang',
+                'category_permission_id'=>5
             ],
             [
-                'name' => 'product-delete',
-                'display_name' => 'Xóa Sản Phẩm',
-                'description' => 'Được Xóa Sản Phẩm',
-                'category_permission_id'=>4
+                'name' => 'page-delete',
+                'display_name' => 'Xóa Trang',
+                'description' => 'Được Xóa Trang',
+                'category_permission_id'=>5
             ],
         ];
         foreach ($permission as $key => $value) {

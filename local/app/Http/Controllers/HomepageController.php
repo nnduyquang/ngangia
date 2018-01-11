@@ -57,4 +57,18 @@ class HomepageController extends Controller
         return view('frontend.common.menu.m-category', compact('categories','menu_horizon'));
     }
 
+    public function search(Request $request){
+        $keywords = preg_replace('/\s+/', ' ', $request->input('txtSearch'));
+        $searches = Product::where('name', 'like', '%' . $keywords . '%')->orderBy('id', 'DESC')->get();
+        foreach($searches as $key=>$data){
+            $data->path= $data->category->path. '/san-pham/' . $data->path;
+        }
+        $list_sidebar = Category::select('id', 'name', 'level', 'parent_id','path')->where('level', '=', 0)->orWhere('level', '=', 1)->orderBy('order')->get();
+        $menu_sidebar = [];
+        $menu_horizon= Category::where('level', '=', 0)->orderBy('order')->get();
+        self::showCategoryDropDown($list_sidebar, 0, $menu_sidebar);
+        return view('frontend.search.search', compact('searches', 'keywords','menu_sidebar','menu_horizon'))
+            ->with('i', ($request->input('page', 1) - 1) * 5);
+    }
+
 }
