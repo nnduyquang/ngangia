@@ -68,7 +68,7 @@ function chuyen_chuoi_thanh_path($str)
 
 function cat_chuoi_dai_thanh_ngan($str, $num)
 {
-    if (strlen($str) > $num)
+    if (strlen($str) > $num+7)
         return substr($str, 0, strpos($str, ' ', $num)) . " [...]";
     else
         return $str;

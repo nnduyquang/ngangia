@@ -13,34 +13,39 @@
                             <div id="list-product-content" class="col-md-12">
                                 <div class="row">
                                     <div class="demo-flex">
-                                        <div class="list-category col-md-4 hidden-sm hidden-xs">
+                                        <div class="list-category col-md-3 hidden-sm hidden-xs">
                                             <div class="row">
                                                 {{ Html::image($data[0]['category']->image,'',array('class'=>'image-category')) }}
-                                                @foreach($data[0]['list_subMenu'] as $key2=>$data2)
-                                                    <div class="col-md-6">
-                                                        <div class="row">
-                                                            <a href="{{URL::to('danh-muc/'.$data2->path)}}">{{$data2->name}}</a>
+                                                <div class="list-product">
+                                                    @foreach($data[0]['list_subMenu'] as $key2=>$data2)
+                                                        <div class="one-product col-md-12">
+                                                            <div class="row">
+                                                                <a href="{{URL::to('danh-muc/'.$data2->path)}}">{{$data2->name}}</a>
+                                                            </div>
                                                         </div>
+                                                    @endforeach
+                                                    <div class="col-md-12">
+                                                        <div class="row"><a class="view-all"
+                                                                            href="{{URL::to('danh-muc/'.$data[0]['category']->path)}}">Xem
+                                                                Tất Cả</a></div>
                                                     </div>
-                                                @endforeach
-                                                <div class="col-md-6">
-                                                    <div class="row"><a class="view-all" href="#">Xem Tất Cả</a></div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="list-item col-md-8">
+                                        <div class="list-item col-md-9">
                                             <div class="row">
-                                                <dic class="m-list-product col-xs-12 hidden-md hidden-lg">
+                                                <div class="m-list-product col-xs-12 hidden-md hidden-lg">
                                                     <div class="row">
                                                         @foreach($data[0]['list_subMenu'] as $key2=>$data2)
-                                                            <div class="col-xs-6">
+                                                            <div class="col-md-">
                                                                 <div class="row">
                                                                     <a href="{{URL::to('danh-muc/'.$data2->path)}}">{{$data2->name}}</a>
                                                                 </div>
                                                             </div>
                                                         @endforeach
                                                     </div>
-                                                </dic>
+                                                </div>
+
                                                 @foreach($data[0]['list_product'] as $key2=>$data2)
                                                     <a href="{{URL::to($data2->path)}}">
                                                         <div class="one-item col-md-3 col-xs-6">
@@ -48,7 +53,8 @@
                                                             <div class="item-detail">
                                                                 <span class="title">{{$data2->name}}</span>
                                                                 @if($data2->price!=0)
-                                                                    <span class="price-sale">{{$data2->final_price}} VND
+                                                                    <span class="price-sale">{{$data2->final_price}}
+                                                                        VND
                                                                         @if($data2->sale!=0)
                                                                             <span class="discount">- {{$data2->sale}}
                                                                                 %</span>
@@ -65,6 +71,7 @@
                                                         </div>
                                                     </a>
                                                 @endforeach
+
                                             </div>
                                         </div>
                                     </div>

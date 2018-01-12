@@ -44,6 +44,7 @@ class feProductController extends Controller
         $list = Product::where('category_id', '=', $category->id)->orderBy('created_at')->get();
         foreach ($list as $key2 => $data2) {
             $data2->path = $category->path . '/san-pham/' . $data2->path;
+            $data2->name=cat_chuoi_dai_thanh_ngan($data2->name,35);
             array_push($list_product, $data2);
         }
         $sub = Category::where('parent_id', '=', $category->id)->get();
