@@ -16,7 +16,8 @@ Route::get('/danh-muc/{pathCategory}','feCategoryController@getDetailCategory');
 Route::get('/category', 'HomepageController@getFrontendContentCategory');
 Route::get('/{pathCategory}/san-pham/{pathProduct}', 'feProductController@getDetailProduct');
 Route::post('/tim-kiem/', ['as' => 'homepage.search', 'uses' => 'HomepageController@search']);
-Route::get('/trang/{path}/','fePageController@getPageInfo');
+Route::get('/trang/gioi-thieu/','fePageController@getGioiThieuInfo');
+Route::get('/trang/lien-he/','fePageController@getLienHeInfo');
 //Route::get('/trang/gioi-thieu',function(){
 //    return view('frontend.page.gioithieu');
 //});

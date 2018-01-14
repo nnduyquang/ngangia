@@ -49,7 +49,7 @@
                                                         </li>
                                                         <li>Cung cấp vật tư y tế, y khoa, nha khoa.</li>
                                                     </ul>
-                                                    <h3 style="font-weight: bold;line-height:  3.5;font-size: 21px;text-align: center;color: #0c4294;">SƠ ĐỒ TỔ CHỨC</h3>
+                                                    <h3 style="font-weight: bold;line-height:  3.5;font-size: 21px;text-align: center;color: #0c4294;padding-right: 49px;">SƠ ĐỒ TỔ CHỨC</h3>
                                                     {{ Html::image('images/uploads/images/tochuc.PNG','',array('class'=>'no-style','style'=>'width:100%')) }}
                                                     <h2 style="font-weight: bold;line-height:  3.5;font-size: 16px;color: #0c4294;">
                                                         CHIẾN LƯỢC VÀ PHÁT TRIỂN</h2>

@@ -18,18 +18,19 @@
                     <h3>Giới Thiệu</h3>
                     <ul>
                         <li><a href="{{URL::to('trang/gioi-thieu')}}">Về Chúng Tôi</a></li>
-                        <li><a href="#">Liên Hệ</a></li>
+                        <li><a href="{{URL::to('trang/lien-he')}}">Liên Hệ</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3">
                     <h3>Ngân Gia</h3>
                     <ul>
 
-                        <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i><span>49/24/10 Bùi Quang Là, Phường 12, Quận Gò Vấp, TPHCM</span></a></li>
-                        <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i><span>Chăm sóc khách hàng: </br>
-                                    (028) 66547111</br>
-                                    Từ 8h00 - 17h00 các ngày thứ 2 đến thứ 7</span></a></li>
-                        <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i><span>sales@ngangia.com.vn</span></a></li>
+                        <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i><span>Địa Chỉ: 22 Nguyễn Thị Rư, Tổ 6, Thị Trấn Củ Chi, Huyện Củ Chi, TPHCM</span></a></li>
+                        <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i><span>VP: 49/24/10 Bùi Quang Là, Phường 12, Quận Gò Vấp, TPHCM</span></a></li>
+                        <li><a href="#"><span>MST: 0313794015</span></a></li>
+                        <li><a href="#"><span>ĐT: (028) 66547111</span></a></li>
+                        <li><a href="#"><span>Fax: 02866547111</span></a></li>
+                        <li><a href="#"><span>sales@ngangia.com.vn</span></a></li>
                     </ul>
                 </div>
                 <div class="col-md-3">
